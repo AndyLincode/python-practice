@@ -6,10 +6,11 @@ def count_words(files_path, sheet_name, column_name):
     # 讀取excel檔案
     df = pd.read_excel(files_path, sheet_name=sheet_name)
     # 將欄位組成一個字串
-    words_str = " ".join(df[column_name].astype(str))
+    words_str = "".join(df[column_name].astype(str))
+
     # 算字母或符號出現幾次 回傳dict {'A': xxx, 'B': xxx, ...}
     word_count = Counter(words_str)
-    print(word_count)
+    
     return word_count
 
 
